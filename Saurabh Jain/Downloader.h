@@ -12,12 +12,21 @@
 #define DOWNLOADED_KEY @"sj_downloadedArticles"
 #define FAILED_KEY @"sj_fail"
 
+typedef NS_ENUM (NSUInteger, SJArticleType) {
+    
+    // Searching
+    SJArticleTypeSearch = 0,
+    
+    // The most viewed
+    SJArticleTypeMostViewed
+};
+
 @interface Downloader : NSObject
 
 // Singleton support
 + (instancetype) sharedDownloader;
 
 // Query for articles
-- (void) queryForArticles:(NSString*)string;
+- (void) queryForArticles:(NSString*)string andType:(SJArticleType)type;
 
 @end

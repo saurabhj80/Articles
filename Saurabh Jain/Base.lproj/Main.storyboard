@@ -45,7 +45,14 @@
                             <outlet property="delegate" destination="end-kV-icz" id="01u-9k-Bl4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vwY-xE-8pw"/>
+                    <navigationItem key="navigationItem" id="vwY-xE-8pw">
+                        <barButtonItem key="rightBarButtonItem" title="Most Viewed" id="zgP-eS-hck">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="searchForMostViewed:" destination="end-kV-icz" id="et2-Fh-DYf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="cHB-R6-UW0" id="FrY-OG-w95"/>
                         <segue destination="Hi6-Be-Rc6" kind="presentation" identifier="webViewSegue" id="Ywj-e6-ki5"/>
@@ -89,28 +96,26 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0t-wV-3if">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3T-sx-6dy">
+                                <rect key="frame" x="524" y="544" width="60" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="gfX-Se-lTS"/>
+                                    <constraint firstAttribute="width" constant="60" id="icl-ma-GNG"/>
                                 </constraints>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tDr-S1-8Rj"/>
-                                    <barButtonItem systemItem="done" id="fid-VQ-MIP">
-                                        <connections>
-                                            <action selector="dismiss:" destination="Hi6-Be-Rc6" id="4gb-6K-3EE"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="Hi6-Be-Rc6" eventType="touchUpInside" id="AsV-WG-HOi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1ie-ny-urH" firstAttribute="top" secondItem="H0t-wV-3if" secondAttribute="bottom" id="FrN-uB-Xqj"/>
                             <constraint firstItem="oFp-F1-2kS" firstAttribute="leading" secondItem="51s-Eu-MHr" secondAttribute="leading" id="GOK-pJ-QHW"/>
-                            <constraint firstAttribute="trailing" secondItem="H0t-wV-3if" secondAttribute="trailing" id="IJ9-BG-Qug"/>
+                            <constraint firstItem="1ie-ny-urH" firstAttribute="top" secondItem="Y3T-sx-6dy" secondAttribute="bottom" constant="20" id="IvF-rs-YJ2"/>
                             <constraint firstItem="oFp-F1-2kS" firstAttribute="top" secondItem="51s-Eu-MHr" secondAttribute="top" id="PTo-M3-eSf"/>
-                            <constraint firstItem="H0t-wV-3if" firstAttribute="leading" secondItem="51s-Eu-MHr" secondAttribute="leading" id="dY5-Hg-PYo"/>
+                            <constraint firstAttribute="trailing" secondItem="Y3T-sx-6dy" secondAttribute="trailing" constant="16" id="QVP-kJ-nMV"/>
                             <constraint firstItem="1ie-ny-urH" firstAttribute="top" secondItem="oFp-F1-2kS" secondAttribute="bottom" id="lkn-uA-NTK"/>
                             <constraint firstAttribute="trailing" secondItem="oFp-F1-2kS" secondAttribute="trailing" id="xmE-Rk-NKA"/>
                         </constraints>

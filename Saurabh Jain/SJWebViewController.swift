@@ -31,7 +31,8 @@ class SJWebViewController: UIViewController {
         progress.showProgressView(true)
     }
     
-    @IBAction func dismiss(sender: UIBarButtonItem) {
+
+    @IBAction func dismiss(sender: UIButton) {
         delegate?.didTapDone()
     }
 }
