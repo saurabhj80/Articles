@@ -62,24 +62,25 @@
     else
         return;
     
+    // If needed in the future
+    // __weak typeof(self) weakSelf = self;
     [manager GET:apiEndPoint parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
         // introspection
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             
-            SJArticleType s = SJArticleTypeSearch;
-            
-            if (type == SJArticleTypeMostViewed) {
-                s = SJArticleTypeMostViewed;
-            }
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:DOWNLOADED_KEY object:[responseObject mutableCopy] userInfo:@{@"type": @(s)}];
+            // Dispatch to the main queue
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[NSNotificationCenter defaultCenter] postNotificationName:DOWNLOADED_KEY object:[responseObject mutableCopy] userInfo:@{@"type": @(type)}];
+            });
         }
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
         // Fail notification
-        [[NSNotificationCenter defaultCenter] postNotificationName:FAILED_KEY object:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[NSNotificationCenter defaultCenter] postNotificationName:FAILED_KEY object:nil];
+        });
     }];
     
 }

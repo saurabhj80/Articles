@@ -108,3 +108,9 @@
 #define COCOAPODS_VERSION_MINOR_MRProgress_Stopable 8
 #define COCOAPODS_VERSION_PATCH_MRProgress_Stopable 1
 
+// PullToRefreshCoreText
+#define COCOAPODS_POD_AVAILABLE_PullToRefreshCoreText
+#define COCOAPODS_VERSION_MAJOR_PullToRefreshCoreText 0
+#define COCOAPODS_VERSION_MINOR_PullToRefreshCoreText 2
+#define COCOAPODS_VERSION_PATCH_PullToRefreshCoreText 0
+
