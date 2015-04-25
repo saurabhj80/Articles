@@ -34,6 +34,7 @@ class MainTableViewController: UITableViewController {
         self.navigationItem.titleView = UILabel.addNavLabel("Health", size: NAV_TITLE_FONT)
         
         searchBar.delegate = self
+        searchBar.keyboardAppearance = .Dark
         
     }
     
