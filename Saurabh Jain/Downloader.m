@@ -13,12 +13,12 @@
 // Download the articles
 - (void) downloadContent:(NSString *)str andType:(SJArticleType)type;
 
+#define APIKEY @"02345b4316532bcd5264fdcf5e71db45:10:71928127"
+#define MOSTPOPULAR_APIKEY @"905b390fe5812800b014c6baccbdc990:2:71928127"
+
 @end
 
 @implementation Downloader
-
-#define APIKEY @"02345b4316532bcd5264fdcf5e71db45:10:71928127"
-#define MOSTPOPULAR_APIKEY @"905b390fe5812800b014c6baccbdc990:2:71928127"
 
 + (instancetype) sharedDownloader {
     
@@ -38,29 +38,33 @@
     [self downloadContent:string andType:type];
 }
 
+#pragma mark - 
 #pragma mark - Helper Method
 
 - (void) downloadContent:(NSString *)str andType:(SJArticleType)type{
     
+    // The Manager
     AFHTTPSessionManager* manager = [[AFHTTPSessionManager alloc] initWithBaseURL:nil];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     str = [str stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     
-    NSString* str1 = [NSString stringWithFormat:@"http://api.nytimes.com/svc/search/v2/articlesearch.json?q=%@&sort=newest&fl=web_url", str];
-    NSString* str2 = [@"%2Csnippet%2Clead_paragraph%2Cheadline&api-key=" stringByAppendingString:APIKEY];
+    // The endpoint
+    NSString* initialString = [NSString stringWithFormat:@"http://api.nytimes.com/svc/search/v2/articlesearch.json?q=%@&sort=newest&fl=web_url", str];
+    NSString* finalString = [@"%2Csnippet%2Clead_paragraph%2Cheadline&api-key=" stringByAppendingString:APIKEY];
     
     NSString* apiEndPoint = nil;
     
-    if (type == SJArticleTypeSearch) {
-        apiEndPoint = [str1 stringByAppendingString:str2];
-    } else if (type == SJArticleTypeMostViewed) {
+    // Check the type
+    if (type == SJArticleTypeSearch)
+        apiEndPoint = [initialString stringByAppendingString:finalString];
+    else if (type == SJArticleTypeMostViewed)
         apiEndPoint = [NSString stringWithFormat:@"http://api.nytimes.com/svc/mostpopular/v2/mostviewed/Health/7.json?api-key=%@", MOSTPOPULAR_APIKEY];
-    } else {
+    else
         return;
-    }
     
     [manager GET:apiEndPoint parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
+        // introspection
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             
             SJArticleType s = SJArticleTypeSearch;
@@ -68,8 +72,6 @@
             if (type == SJArticleTypeMostViewed) {
                 s = SJArticleTypeMostViewed;
             }
-            
-            NSLog(@"%lu", (unsigned long)s);
             
             [[NSNotificationCenter defaultCenter] postNotificationName:DOWNLOADED_KEY object:[responseObject mutableCopy] userInfo:@{@"type": @(s)}];
         }

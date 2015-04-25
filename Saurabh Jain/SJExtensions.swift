@@ -44,7 +44,7 @@ extension UILabel {
     
     class func addNavLabel(title: String, size: CGFloat) -> UILabel {
         
-        var label = UILabel(frame: CGRectMake(0, 0, 50, 50))
+        let label = UILabel(frame: CGRectMake(0, 0, 50, 50))
         label.textColor = UIColor.whiteColor()
         label.text = title
         label.font = UIFont.fontUsedInTheApp(size: size)
