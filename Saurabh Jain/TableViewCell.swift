@@ -12,7 +12,6 @@ import UIKit
 let TEXTLABEL_FONT_SIZE: CGFloat = 22
 let DETAILTEXTLABEL_FONT_SIZE: CGFloat = 14
 
-
 class TableViewCell: UITableViewCell {
     
     // Headline

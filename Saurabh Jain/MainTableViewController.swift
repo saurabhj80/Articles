@@ -14,9 +14,11 @@ class MainTableViewController: UITableViewController {
     private var resultsDictionary: NSDictionary?
     private var articles: NSArray?
     
+    // Progress - UI
     private var progress: SJOverlayView!
     private var showIndicator = true
     private var type = SJArticleType.Search
+    private var refresh: CBStoreHouseRefreshControl!
     
     // Search Bar
     @IBOutlet weak var searchBar: UISearchBar!
@@ -44,8 +46,14 @@ class MainTableViewController: UITableViewController {
         searchBar.delegate = self
         searchBar.keyboardAppearance = .Dark
         
+        // Later: Add pull to refresh
+        
+        /*
+        let plist = NSBundle.mainBundle().pathForResource("refresh", ofType: "plist")
+        refresh = CBStoreHouseRefreshControl.attachToScrollView(tableView, target: self, refreshAction: "refreshFeed:", plist: plist!, color: UIColor.blackColor(), lineWidth: 1.5, dropHeight: 80, scale: 1.0, horizontalRandomness: 150, reverseLoadingAnimation: true, internalAnimationFactor: 1.5)
+        */
     }
-    
+        
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -63,7 +71,7 @@ class MainTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    
+    // IBAction
     @IBAction func searchForMostViewed(sender: UIBarButtonItem) {
         
         progress.showProgressView(true)
@@ -75,7 +83,7 @@ class MainTableViewController: UITableViewController {
 extension MainTableViewController {
     
     func sj_articles(notification: NSNotification) {
-        
+                
         // Optional Binding
         if let object = notification.object as? NSDictionary {
             resultsDictionary = object

@@ -9,12 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-MRProgress.xcscheme</key>
+		<key>Pods-CBStoreHouseRefreshControl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-PullToRefreshCoreText.xcscheme</key>
+		<key>Pods-MRProgress.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>30BAEEE8DA0F54270E62E558</key>
+		<key>16980A1C7EA1B8EFF1D14E3B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>36E2D4BC98BFDCE3CFEB1F34</key>
+		<key>24F54B175F868E438D1C27AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>40995DFE47F54CFC39D02CD1</key>
+		<key>2928BB1BC1A143DF45F9A12D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A0FA2C2C4996F6BFDD02BF16</key>
+		<key>CC89081D2F11682195CFF13F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

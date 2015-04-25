@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F01571C1AE9A335005CD74F /* SJExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01571B1AE9A335005CD74F /* SJExtensions.swift */; };
+		1F0A79681AEC4121009A2A53 /* refresh.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A79671AEC4121009A2A53 /* refresh.plist */; };
+		1F0A796A1AEC49F9009A2A53 /* SJButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A79691AEC49F9009A2A53 /* SJButton.swift */; };
 		1F557D071AEAD4EA0098D2DE /* SJWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F557D061AEAD4EA0098D2DE /* SJWebViewController.swift */; };
 		1F6C53DB1AE8B181002F86C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6C53DA1AE8B181002F86C6 /* main.m */; };
 		1F6C53DE1AE8B181002F86C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6C53DD1AE8B181002F86C6 /* AppDelegate.m */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		0CCBBB9CD89EED9A0F3CACC3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F01571B1AE9A335005CD74F /* SJExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJExtensions.swift; sourceTree = "<group>"; };
+		1F0A79671AEC4121009A2A53 /* refresh.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = refresh.plist; sourceTree = "<group>"; };
+		1F0A79691AEC49F9009A2A53 /* SJButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJButton.swift; sourceTree = "<group>"; };
 		1F557D061AEAD4EA0098D2DE /* SJWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJWebViewController.swift; sourceTree = "<group>"; };
 		1F6C53D51AE8B181002F86C6 /* Saurabh Jain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saurabh Jain.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6C53D91AE8B181002F86C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 				1F6C53DC1AE8B181002F86C6 /* AppDelegate.h */,
 				1F6C53DD1AE8B181002F86C6 /* AppDelegate.m */,
 				1F6C53D91AE8B181002F86C6 /* Info.plist */,
+				1F0A79671AEC4121009A2A53 /* refresh.plist */,
 				1F6C53DA1AE8B181002F86C6 /* main.m */,
 				1F6C53E81AE8B182002F86C6 /* Images.xcassets */,
 				1F6C53EA1AE8B182002F86C6 /* LaunchScreen.xib */,
@@ -161,6 +166,7 @@
 		1F6C54091AE8C4A8002F86C6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1F0A79691AEC49F9009A2A53 /* SJButton.swift */,
 				1FFDD7B51AEB1F1B00211A62 /* SJOverlayView.swift */,
 				1F6C540A1AE8C4C5002F86C6 /* TableViewCell.swift */,
 			);
@@ -280,6 +286,7 @@
 			files = (
 				1F6C53E71AE8B182002F86C6 /* Main.storyboard in Resources */,
 				1F6C53EC1AE8B182002F86C6 /* LaunchScreen.xib in Resources */,
+				1F0A79681AEC4121009A2A53 /* refresh.plist in Resources */,
 				1F6C53E91AE8B182002F86C6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0A796A1AEC49F9009A2A53 /* SJButton.swift in Sources */,
 				1F6C53DE1AE8B181002F86C6 /* AppDelegate.m in Sources */,
 				1F6C53DB1AE8B181002F86C6 /* main.m in Sources */,
 				1F01571C1AE9A335005CD74F /* SJExtensions.swift in Sources */,

@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.5.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - CBStoreHouseRefreshControl (1.0)
   - MRProgress (0.8.1):
     - MRProgress/ActivityIndicator (= 0.8.1)
     - MRProgress/Blur (= 0.8.1)
@@ -48,16 +49,15 @@ PODS:
   - MRProgress/ProgressBaseClass (0.8.1)
   - MRProgress/Stopable (0.8.1):
     - MRProgress/Helper
-  - PullToRefreshCoreText (0.2)
 
 DEPENDENCIES:
   - AFNetworking
+  - CBStoreHouseRefreshControl
   - MRProgress
-  - PullToRefreshCoreText (~> 0.2)
 
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  CBStoreHouseRefreshControl: a814bd725e74ff4c1e8dd96eb02358199b0da04f
   MRProgress: 72653f3ffd13c7bbac8c9de1da9bf0249fc2717d
-  PullToRefreshCoreText: c843e71fc5ae5b033c0281067368905efd05c7b2
 
 COCOAPODS: 0.35.0
