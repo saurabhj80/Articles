@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <AFHTTPSessionManager.h>
 
-#define DOWNLOADEDKEY @"sj_downloadedArticles"
+#define DOWNLOADED_KEY @"sj_downloadedArticles"
+#define FAILED_KEY @"sj_fail"
 
 @interface Downloader : NSObject
 

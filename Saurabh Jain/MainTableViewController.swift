@@ -25,10 +25,11 @@ class MainTableViewController: UITableViewController {
         progress = SJOverlayView()
         
         // Add observer
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "sj_articles:", name: DOWNLOADEDKEY, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "sj_articles:", name: DOWNLOADED_KEY, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "sj_fail", name: FAILED_KEY, object: nil)
         
         // Start downloading
-        Downloader.sharedDownloader().queryForArticles("Health Issues")
+        Downloader.sharedDownloader().queryForArticles("Health Problems")
         
         tableView.tableFooterView = UIView(frame: CGRectZero)
         self.navigationItem.titleView = UILabel.addNavLabel("Health", size: NAV_TITLE_FONT)
@@ -47,26 +48,34 @@ class MainTableViewController: UITableViewController {
     }
     
     deinit {
+        // Remove Observer
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+}
 
-    // Notification
+// MARK : Notifications
+extension MainTableViewController {
+    
     func sj_articles(notification: NSNotification) {
         
         // Clear out the datasource
         articles = []
         
+        // Clear out the rows
         var count = tableView.numberOfRowsInSection(0)
-        tableView.beginUpdates()
-        for var j = 0; j < count; j++ {
-            tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: j, inSection: 0)], withRowAnimation: .Fade)
+        if count > 0 {
+            tableView.beginUpdates()
+            for var j = 0; j < count; j++ {
+                tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: j, inSection: 0)], withRowAnimation: .Fade)
+            }
+            tableView.endUpdates()
         }
-        tableView.endUpdates()
-        
+
         if let object: AnyObject = notification.object {
             resultsDictionary = object as? NSDictionary
             
@@ -81,21 +90,28 @@ class MainTableViewController: UITableViewController {
             
             if let articles = articles {
                 for var i = 0; i < articles.count; i++ {
-                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade)
-
+                    tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: i, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade)
+                    
                 }
             }
             
             tableView.endUpdates()
         }
         
+        // Hide the progress view
         progress.hideView(true)
         
     }
     
+    // Download fail
+    func sj_fail() {
+        progress.hideView(true)
+    }
 }
 
-// MARK - table view data source
+
+// MARK - Table View Data Source
+
 extension MainTableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int

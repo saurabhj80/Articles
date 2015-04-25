@@ -82,10 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				1F6C53D71AE8B181002F86C6 /* Saurabh Jain */,
-				1F6C53F41AE8B182002F86C6 /* Saurabh JainTests */,
-				1F6C53D61AE8B181002F86C6 /* Products */,
-				A8C5B2B1D4F5250EFC55E65F /* Pods */,
-				840A391CB25FD2A79C7D8EF4 /* Frameworks */,
+				1FFDD7B71AEB398400211A62 /* Supporting Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +165,17 @@
 				1F6C540A1AE8C4C5002F86C6 /* TableViewCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		1FFDD7B71AEB398400211A62 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F6C53F41AE8B182002F86C6 /* Saurabh JainTests */,
+				1F6C53D61AE8B181002F86C6 /* Products */,
+				A8C5B2B1D4F5250EFC55E65F /* Pods */,
+				840A391CB25FD2A79C7D8EF4 /* Frameworks */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		840A391CB25FD2A79C7D8EF4 /* Frameworks */ = {

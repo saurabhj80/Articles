@@ -17,7 +17,7 @@
 
 @implementation Downloader
 
-#define APIKEY "02345b4316532bcd5264fdcf5e71db45:10:71928127"
+#define APIKEY @"02345b4316532bcd5264fdcf5e71db45:10:71928127"
 
 + (instancetype) sharedDownloader {
     
@@ -32,33 +32,35 @@
     return sharedDownloader;
 }
 
-- (void) downloadContent:(NSString *)str {
-    
-     AFHTTPSessionManager* manager = [[AFHTTPSessionManager alloc] initWithBaseURL:nil];
-     manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    str = [str stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-    
-    NSString* str1 = [NSString stringWithFormat:@"http://api.nytimes.com/svc/search/v2/articlesearch.json?q=%@&sort=newest&fl=web_url", str];
-    NSString* str2 = @"%2Csnippet%2Clead_paragraph%2Cheadline&api-key=02345b4316532bcd5264fdcf5e71db45:10:71928127";
-    
-     [manager GET:[str1 stringByAppendingString:str2] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-
-     if ([responseObject isKindOfClass:[NSDictionary class]]) {
-
-         [[NSNotificationCenter defaultCenter] postNotificationName:DOWNLOADEDKEY object:[responseObject mutableCopy]];
-     }
-     
-     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-     
-         NSLog(@"%@", error);
-     
-     }];
-    
-}
-
 - (void) queryForArticles:(NSString*)string
 {
     [self downloadContent:string];
+}
+
+#pragma mark - Helper Method
+
+- (void) downloadContent:(NSString *)str {
+    
+    AFHTTPSessionManager* manager = [[AFHTTPSessionManager alloc] initWithBaseURL:nil];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    str = [str stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    
+    NSString* str1 = [NSString stringWithFormat:@"http://api.nytimes.com/svc/search/v2/articlesearch.json?q=%@&sort=newest&fl=web_url", str];
+    NSString* str2 = [@"%2Csnippet%2Clead_paragraph%2Cheadline&api-key=" stringByAppendingString:APIKEY];
+    
+    [manager GET:[str1 stringByAppendingString:str2] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:DOWNLOADED_KEY object:[responseObject mutableCopy]];
+        }
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        // Fail notification
+        [[NSNotificationCenter defaultCenter] postNotificationName:FAILED_KEY object:nil];
+    }];
+    
 }
 
 @end
