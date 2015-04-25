@@ -18,4 +18,17 @@ class SJButton: UIButton {
         }
     }
 
+    // Drawing
+    override func drawRect(rect: CGRect) {
+        
+        let context = UIGraphicsGetCurrentContext()
+        
+        CGContextSetFillColorWithColor(context, UIColor.colorUsedInTheApp(28, blue: 111, green: 167).CGColor)
+        CGContextFillRect(context, rect)
+        
+        CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
+        CGContextSetLineWidth(context, 2.0)
+        CGContextStrokeRect(context, CGRectInset(rect, 5, 5))
+    
+    }
 }

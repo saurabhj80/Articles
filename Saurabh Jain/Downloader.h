@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AFHTTPSessionManager.h>
 
+// Notification keys
 #define DOWNLOADED_KEY @"sj_downloadedArticles"
 #define FAILED_KEY @"sj_fail"
 
