@@ -41,7 +41,7 @@
 		1F0A79671AEC4121009A2A53 /* refresh.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = refresh.plist; sourceTree = "<group>"; };
 		1F0A79691AEC49F9009A2A53 /* SJButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJButton.swift; sourceTree = "<group>"; };
 		1F557D061AEAD4EA0098D2DE /* SJWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJWebViewController.swift; sourceTree = "<group>"; };
-		1F6C53D51AE8B181002F86C6 /* Saurabh Jain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saurabh Jain.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F6C53D51AE8B181002F86C6 /* Linfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6C53D91AE8B181002F86C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F6C53DA1AE8B181002F86C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F6C53DC1AE8B181002F86C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		1F6C53D61AE8B181002F86C6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1F6C53D51AE8B181002F86C6 /* Saurabh Jain.app */,
+				1F6C53D51AE8B181002F86C6 /* Linfo.app */,
 				1F6C53F11AE8B182002F86C6 /* Saurabh JainTests.xctest */,
 			);
 			name = Products;
@@ -220,7 +220,7 @@
 			);
 			name = "Saurabh Jain";
 			productName = "Saurabh Jain";
-			productReference = 1F6C53D51AE8B181002F86C6 /* Saurabh Jain.app */;
+			productReference = 1F6C53D51AE8B181002F86C6 /* Linfo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1F6C53F01AE8B182002F86C6 /* Saurabh JainTests */ = {
@@ -479,7 +479,8 @@
 				INFOPLIST_FILE = "Saurabh Jain/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Linfo;
+				PROVISIONING_PROFILE = "2a7db015-be85-476f-a07e-0f0d2135d448";
 				SWIFT_OBJC_BRIDGING_HEADER = "Saurabh Jain/Saurabh Jain-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -496,7 +497,8 @@
 				INFOPLIST_FILE = "Saurabh Jain/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Linfo;
+				PROVISIONING_PROFILE = "2a7db015-be85-476f-a07e-0f0d2135d448";
 				SWIFT_OBJC_BRIDGING_HEADER = "Saurabh Jain/Saurabh Jain-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
