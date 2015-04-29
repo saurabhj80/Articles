@@ -482,6 +482,7 @@
 				PRODUCT_NAME = Linfo;
 				PROVISIONING_PROFILE = "2a7db015-be85-476f-a07e-0f0d2135d448";
 				SWIFT_OBJC_BRIDGING_HEADER = "Saurabh Jain/Saurabh Jain-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -500,6 +501,7 @@
 				PRODUCT_NAME = Linfo;
 				PROVISIONING_PROFILE = "2a7db015-be85-476f-a07e-0f0d2135d448";
 				SWIFT_OBJC_BRIDGING_HEADER = "Saurabh Jain/Saurabh Jain-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
