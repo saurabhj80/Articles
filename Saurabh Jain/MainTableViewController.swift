@@ -226,7 +226,8 @@ extension MainTableViewController {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! TableViewCell
         
         if let url = cell.web_url {
-            self.performSegueWithIdentifier("webViewSegue", sender: cell)
+            //self.performSegueWithIdentifier("webViewSegue", sender: cell)
+            UIApplication.sharedApplication().openURL(url)
         }
     }
     
